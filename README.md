@@ -23,10 +23,40 @@ You can download the repository with the command :
 
 ### Dependencies
 
+#### NCBI command-line tool datasets
+
+`datasets` is one of the NCBI command-line tool usefull to get data about metadata about different entry in the gene, genome and virus databank.\
+More information about the tool and how to install it : https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/.
 
 
+#### Python3
+
+Some scripts are written with `python3`. You can install it at : https://www.python.org/downloads/.
+
+
+#### jq : parsing json file with the CLI
+
+`jq` is a json parser. It's available on Debian-like system with :
+
+```sh
+sudo apt install jq
+```
 
 ## Steps
 
 ### Select genomes
+
+```sh
+sh src/select_genome.sh
+```
+
+We'll analyse 60 genomes and annotations, from 4 clades or paraphyletic groups (embryophyta or land plants, vertebrates, invertebrates and fungi).\
+
+#### I. Search for relevant genomes
+
+First, we parse the NCBI database to get metadata from interesting genome. A relevant genome is defined as a genome with these caracteristics:
+
+- an annotation is available
+- it's a reference genome
+- the assembly level is 'chromosome'
 
