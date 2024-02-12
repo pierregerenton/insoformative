@@ -28,11 +28,7 @@ You can download the repository with the command :
 `datasets` is one of the NCBI command-line tool usefull to get data about metadata about different entry in the gene, genome and virus databank.\
 More information about the tool and how to install it : https://www.ncbi.nlm.nih.gov/datasets/docs/v2/download-and-install/.
 
-
-#### Python3
-
-Some scripts are written with `python3`. You can install it at : https://www.python.org/downloads/.
-
+Outputs given in this repository used version: 16.4.5.
 
 #### jq : parsing json file with the CLI
 
@@ -42,9 +38,21 @@ Some scripts are written with `python3`. You can install it at : https://www.pyt
 sudo apt install jq
 ```
 
+Outputs given in this repository used version: 1.6.
+
+
+#### Python3
+
+Some scripts are written with `python3`. You can install it at : https://www.python.org/downloads/.
+
+Outputs given in this repository used version: 3.10.12.
+
+
+
+
 ## Steps
 
-### Select genomes
+### I. Select genomes
 
 ```sh
 sh src/select_genome.sh
@@ -52,11 +60,19 @@ sh src/select_genome.sh
 
 We'll analyse 60 genomes and annotations, from 4 clades or paraphyletic groups (embryophyta or land plants, vertebrates, invertebrates and fungi).\
 
-#### I. Search for relevant genomes
+#### a. Search for relevant genomes
 
-First, we parse the NCBI database to get metadata from interesting genome. A relevant genome is defined as a genome with these caracteristics:
+First, we browse the NCBI database to get metadata from interesting genome. A relevant genome is defined as a genome with these caracteristics:
 
 - an annotation is available
 - it's a reference genome
 - the assembly level is 'chromosome'
+
+Reports available in [`./res/1_genome_selection/assembly_reports/`](./res/1_genome_selection/assembly_reports/).
+
+#### b. Extraction of taxID from relevant genomes.
+
+Then, we parse the metadata to extract the taxons ID of each group.
+
+Taxons ID available in [`./res/1_genome_selection/taxID/`](./res/1_genome_selection/taxID/).
 
