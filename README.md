@@ -47,7 +47,14 @@ Some scripts are written with `python3`. You can install it at : https://www.pyt
 
 Outputs given in this repository used version: 3.10.12.
 
+##### Python packages
 
+Necessary python packages can be found in [python_requirement.txt](./python_requirement.txt).\
+You can download them all at once if you have `pip` with :
+
+```sh
+python3 -m pip install -r python_requirement.txt
+```
 
 
 ## Steps
@@ -59,6 +66,7 @@ sh src/select_genome.sh
 ```
 
 We'll analyse 60 genomes and annotations, from 4 clades or paraphyletic groups (embryophyta or land plants, vertebrates, invertebrates and fungi).\
+Detailed information below.
 
 #### a. Search for relevant genomes
 
@@ -76,3 +84,4 @@ Then, we parse the metadata to extract the taxons ID of each group.
 
 Taxons ID available in [`./res/1_genome_selection/taxID/`](./res/1_genome_selection/taxID/).
 
+#### c. Make a newick tree with the taxID

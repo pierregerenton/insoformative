@@ -46,3 +46,14 @@ do
 done
 
 echo "Done !"
+
+
+mkdir -p res/1_genome_selection/newick_tree
+
+echo
+echo "Make a newick tree with the taxID."
+echo '----------------------------------'
+echo
+
+
+
